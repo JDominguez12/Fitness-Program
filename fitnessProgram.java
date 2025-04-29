@@ -3,5 +3,6 @@ public class fitnessProgram {
         System.out.println("Welcome to the Fitness Program!");
         System.out.println("This is the current change.");
         //change2
+        //change3
     }
 }
