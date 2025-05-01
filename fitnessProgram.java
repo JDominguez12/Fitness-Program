@@ -8,5 +8,6 @@ public class fitnessProgram {
         //change5
         // change6
         //change7
+        //Java Sucks
     }
 }
