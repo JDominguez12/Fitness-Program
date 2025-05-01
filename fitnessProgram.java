@@ -7,5 +7,6 @@ public class fitnessProgram {
         //change4
         //change5
         // change6
+        system.out.print(" i hate java ");
     }
 }
