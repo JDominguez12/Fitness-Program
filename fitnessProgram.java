@@ -1,6 +1,6 @@
 public class fitnessProgram {
     public static void main(String[] args) {
-        canner scnr = new Scanner(System.in);
+        Scanner scnr = new Scanner(System.in);
         MenuHandler menuHandler = new MenuHandler();
 
         System.out.println("Welcome to the Fitness Program!");
