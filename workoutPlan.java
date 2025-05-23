@@ -7,7 +7,7 @@ public class workoutPlan{
     private ArrayList<String> days = new ArrayList<>();
     private String line; 
 
-    public workoutPlan() {
+    public ArrayList<String> daysSetup(){
         System.out.println("Add the days of the week you want to work out (e.g., Monday, Tuesday). type 'done' if done:");
         for (int i = 0; i < 7; i++) {
             String day = scnr.nextLine();
@@ -17,9 +17,16 @@ public class workoutPlan{
             }
             days.add(day);
         }
-        for (String day : days) {
-            System.out.println("You have selected: " + day);
-        }
+        return days;
+    }
+    public void setDays(ArrayList<String> days){
+        this.days = days;
+    }
+    public ArrayList<String> getDays(){
+        return days;
+    }
+
+    public void buildWorkoutPlan() {
         try{
             FileReader fr = new FileReader("workouts.txt");
             BufferedReader br = new BufferedReader(fr);
