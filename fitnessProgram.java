@@ -1,26 +1,37 @@
 public class fitnessProgram {
-    public static void main(String[] args) {
-        Scanner scnr = new Scanner(System.in);
-        MenuHandler menuHandler = new MenuHandler();
-
-        System.out.println("Welcome to the Fitness Program!");
+  public static bmi BMICalculator(Scanner scnr) {
+        bmi user1 = new bmi();
+        int weight = 0;
+        int height = 0;
+        
 
         while (true) {
             try {
-                menuHandler.displayMenu();
-                System.out.print("Enter option: ");
-                int choice = scnr.nextInt();
-                menuHandler.handleSelection(choice, scnr);
-            } catch (Exception e) {
-                System.out.println("Invalid input. Please enter a number between 1 and 3.");
-                scnr.nextLine(); // Clear buffer
+                System.out.println("Enter weight in pounds: ");
+                weight = scnr.nextInt();
+                System.out.println("Enter your height in inches: ");
+                height = scnr.nextInt();
+                break;
+            } catch (InputMismatchException e) {
+                System.out.println("Error: Please enter a number.");
+                scnr.next();
             }
         }
+        user1.setWeight(weight);
+        user1.setHeight(height);
+        try {
+            user1.getBMI(weight, height);
+            
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return user1;
     }
-}
   public static void menu(Scanner scnr) {
       int choice = 0
-
+      workoutPlan user2 = null;
+      bmi user1 = null;
+          
       while (true) {
           System.out.println(x:"1. BMI Calculator");
           System.out.println(x:"2. Workout Plan");
