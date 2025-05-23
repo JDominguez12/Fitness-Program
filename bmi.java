@@ -1,4 +1,5 @@
 import java.util.InputMismatchException;
+import java.io.*;
 public class bmi {
 	private int weight;
     private int height;
@@ -14,6 +15,9 @@ public class bmi {
     public int getHeight(){
         return height;
     }
+    public double returnBMI(){
+        return ((double) weight / (height * height)) * 703;
+    }
     public double getBMI(int weight, int height) throws Exception{
         double bmiCalc = 0.0;
         try{
@@ -26,7 +30,7 @@ public class bmi {
             bmiCalc = ((double) weight / (height * height)) * 703;
             System.out.print("Your BMI is: ");
             System.out.printf("%.2f", bmiCalc);
-            
+            writeBMI(bmiCalc);
         }
         catch(InputMismatchException e){
             System.out.println("Error: Please enter a number");
@@ -39,5 +43,4 @@ public class bmi {
         }
         return bmiCalc;
     }
-
 }
